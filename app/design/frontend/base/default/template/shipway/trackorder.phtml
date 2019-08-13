@@ -1,0 +1,43 @@
+
+<?php
+ $url = $this->getFormAction();
+
+?>
+<script type="text/javascript">
+
+// Please add jquery library if it is not included in your Magento.
+
+jQuery.noConflict();
+  jQuery(document).ready(function(){
+jQuery('#submit_cod').click(function(){
+    jQuery(".pin-loading").show();
+    var postcode = jQuery('#order_id').val();
+	if(postcode != ''){
+ jQuery.ajax({
+  url: "<?php echo $url; ?>",
+  type: "POST",
+  data: {order_id : postcode,submit_cod:'submit_cod'},
+  dataType: "html",
+  success:function(data){
+      jQuery('#result').html(data);
+  }
+});
+}
+else{
+alert("Please enter a valid Order Id");
+}
+});});
+</script>
+
+
+<div id="shipway_track_wrapper" style="  text-align: center;" >
+	<form  id="form" method="post" style="margin:0 auto;" >
+		<fieldset>
+		<h2 style="    font-size: 18px;">Track Your Shipment Status</h2><br>
+		<p><b>Order ID: </b><input type="text" name="order_id" id="order_id" value="">
+		<input type="button" id="submit_cod" value="Track" name="btnSubmit"></p>
+		</fieldset>
+	</form>
+</div>
+</br>
+<span id="result"></span>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+    <name>bebe68374a49cb41b7c9219e97250044</name>
+    <version>1.2.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">bebe68374a49cb41b7c9219e97250044</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Customer can check delivery status of his order.&#xD;
+* Track airwaybill number from multiple courier companies at one place.&#xD;
+* Track complete shipping status from confirm order to order delivery&#xD;
+* Shows shipment realtime status details.</summary>
+    <description>Customer can check delivery status of his order.&#xD;
+* Track airwaybill number from multiple courier companies at one place.&#xD;
+* Track complete shipping status from confirm order to order delivery&#xD;
+* Shows shipment realtime status details.</description>
+    <notes>Customer can check delivery status of his order.&#xD;
+* Track airwaybill number from multiple courier companies at one place.&#xD;
+* Track complete shipping status from confirm order to order delivery&#xD;
+* Shows shipment realtime status details.</notes>
+    <authors><author><name>Onjection</name><user>MAG003087332</user><email>contact@onjection.com</email></author></authors>
+    <date>2015-08-03</date>
+    <time>13:22:23</time>
+    <contents><target name="magelocal"><dir name="Onj"><dir name="Shipway"><dir name="Block"><dir name="Adminhtml"><file name="Couriermapping.php" hash="d77c31b0a89a6f985cd61ec5dbb3575f"/><file name="Shipway.php" hash="154c775dad05556a12857f4b861e3f2e"/></dir><file name="Links.php" hash="0c28356d35f7ef9b45bea3e85c31c67c"/><file name="Shipway.php" hash="ba7fcdccefe24bee0a1d3329d8b6ff0e"/></dir><dir name="Controllers"><dir name="Adminhtml"><file name="ShipwayController.php" hash="e05ca30aa09ac7add2926b34d380dec9"/></dir><file name="ShipwayController.php" hash="141219e517f3d5b456b95ca1696f7470"/></dir><dir name="Helper"><file name="Data.php" hash="5e312e5e18490879cafe8b1e67ca05f8"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Shipway"><file name="Collection.php" hash="49087bbcb6c2ee8def6c822b2148405a"/></dir><file name="Shipway.php" hash="23a0b6e3de14bb7b6dd611b412b1762b"/></dir><dir name="Order"><dir name="Shipment"><file name="Api.php" hash="4474a6d9ba04e4d8d4038b79c78bccbb"/></dir><file name="Shipment.php" hash="e10833a2724cc2d8fea8faf59da36956"/></dir><file name="Shipway.php" hash="ef7453c11874f110c9155d0c4bd62fa0"/><file name="Status.php" hash="784c25834a82e048211f967f27290b5a"/></dir><dir name="etc"><file name="config.xml" hash="b6e85a1fb1559660c21ca933530edb46"/></dir><dir name="sql"><dir name="shipway_setup"><file name="mysql4-install-0.1.0.php" hash="51dd245ed35fb5ad95f9de9372df748d"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="shipway.xml" hash="491feaf7c6365c72b491efa3bca25f1d"/></dir><dir name="template"><dir name="shipway"><file name="couriermapping.phtml" hash="8156c82adcca4e3f19649646a7809a54"/><file name="shipway.phtml" hash="b8d5038a1577a6a5c4cbd024fb5a11cc"/><file name="tracking.phtml" hash="7555fa99cf112a1b9f01ff7e0736b044"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="shipway"><file name="trackorder.phtml" hash="a7b3b2f5ff899e557ea540cd4a1c1ec1"/></dir></dir><dir name="layout"><file name="shipway.xml" hash="f2388d82e8b0f62531f8b863c40c6508"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Onj_Shipway.xml" hash="d00ab0309ff5e932997e9f6eea950c49"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php><package><name>Mage_core_onjection</name><channel>community</channel><min>1.7.0</min><max>1.9.0.0</max></package></required></dependencies>
+</package>

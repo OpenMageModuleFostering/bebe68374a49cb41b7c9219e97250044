@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Onj_Shipway>
+            <version>0.1.0</version>
+        </Onj_Shipway>
+    </modules>
+    <frontend>
+        <routers>
+            <shipway>
+                <use>standard</use>
+                <args>
+                    <module>Onj_Shipway</module>
+                    <frontName>shipway</frontName>
+                </args>
+            </shipway>
+        </routers>
+        <layout>
+            <updates>
+                <shipway>
+                    <file>shipway.xml</file>
+                </shipway>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<shipway>
+				<use>admin</use>
+				<args>
+					<module>Onj_Shipway</module>
+					<frontName>shipway</frontName>
+				</args>
+			</shipway>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<shipway module="shipway">
+				<title>Shipway Track</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<sub_menu1  module="shipway">
+						<title>Shipway Setting</title>
+						<sort_order>0</sort_order>
+						<action>shipway/adminhtml_shipway</action>
+					</sub_menu1>
+					
+					<sub_menu2  module="shipway">
+						<title>Shipway Courier Mapping</title>
+						<sort_order>1</sort_order>
+						<action>shipway/adminhtml_shipway/couriermapping</action>
+					</sub_menu2>
+				</children>
+			</shipway>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Onj_Shipway>
+							<title>Shipway Module</title>
+							<sort_order>10</sort_order>
+						</Onj_Shipway>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<shipway>
+					<file>shipway.xml</file>
+				</shipway>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <shipway>
+                <class>Onj_Shipway_Model</class>
+                <resourceModel>shipway_mysql4</resourceModel>
+            </shipway>
+            <shipway_mysql4>
+                <class>Onj_Shipway_Model_Mysql4</class>
+                <entities>
+                    <shipway>
+                        <table>shipway</table>
+                    </shipway>
+                </entities>
+            </shipway_mysql4>
+        </models>
+        <resources>
+            <shipway_setup>
+                <setup>
+                    <module>Onj_Shipway</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </shipway_setup>
+            <shipway_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </shipway_write>
+            <shipway_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </shipway_read>
+        </resources>
+        <blocks>
+            <shipway>
+                <class>Onj_Shipway_Block</class>
+            </shipway>
+        </blocks>
+        <helpers>
+            <shipway>
+                <class>Onj_Shipway_Helper</class>
+            </shipway>
+        </helpers>
+		  
+    
+    <models>
+        <sales>
+            <rewrite>
+                <order_shipment>Onj_Shipway_Model_Order_Shipment</order_shipment>                   
+            </rewrite>
+        </sales>
+    </models>
+	
+	
+    <models>
+        <sales>
+            <rewrite>
+                <order_shipment_api>Onj_Shipway_Model_Order_Shipment_Api</order_shipment_api>                   
+            </rewrite>
+        </sales>
+    </models>
+	
+	
+
+    </global>
+</config>
