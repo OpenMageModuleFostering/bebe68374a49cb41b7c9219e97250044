@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+   <!--  <shipwa_index_index>
+        <reference name="content">
+            <block type="shipwa/shipwa" name="shipwa" template="shipwa/shipwa.phtml" />
+        </reference>
+    </shipwa_index_index> -->
+	
+	<shipwa_index_index>
+        <reference name="content">
+              <block type="shipwa/shipwa" name="shipway1" template="shipwa/trackorder.phtml"/>
+            </reference>
+    </shipwa_index_index>
+	<default>
+    <reference name="top.links">
+        <block type="shipwa/links" name="shipwa_link" />
+        <action method="addLinkBlock"><blockName>shipwa_link</blockName></action>
+    </reference>
+
+<reference name="footer_links">
+<action method="addLink" translate="label title" module="shipwa" >
+<label>Track Order</label>
+<url>shipwa/index/index</url>
+<title>Contact Us</title>
+<prepare>true</prepare>
+</action>
+</reference>
+</default>
+</layout> 

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Company_Shipwa>
+            <version>0.1.0</version>
+        </Company_Shipwa>
+    </modules>
+    <frontend>
+        <routers>
+            <shipwa>
+                <use>standard</use>
+                <args>
+                    <module>Company_Shipwa</module>
+                    <frontName>shipwa</frontName>
+                </args>
+            </shipwa>
+        </routers>
+        <layout>
+            <updates>
+                <shipwa>
+                    <file>shipwa.xml</file>
+                </shipwa>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<shipwa>
+				<use>admin</use>
+				<args>
+					<module>Company_Shipwa</module>
+					<frontName>shipwa</frontName>
+				</args>
+			</shipwa>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<shipwa module="shipwa">
+				<title>Shipway Track</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<!--<items module="shipwa">
+						<title>Manage Items</title>
+						<sort_order>0</sort_order>
+						<action>shipwa/adminhtml_shipwa</action>
+					</items>-->
+					<sub_menu1  module="shipwa">
+						<title>Shipway Setting</title>
+						<sort_order>0</sort_order>
+						<action>shipwa/adminhtml_shipwa</action>
+					</sub_menu1>
+					
+					<sub_menu2  module="shipwa">
+						<title>Shipway Courier Mapping</title>
+						<sort_order>1</sort_order>
+						<action>shipwa/adminhtml_shipwa/couriermapping</action>
+					</sub_menu2>
+				</children>
+			</shipwa>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Company_Shipwa>
+							<title>Shipwa Module</title>
+							<sort_order>10</sort_order>
+						</Company_Shipwa>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<shipwa>
+					<file>shipwa.xml</file>
+				</shipwa>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <shipwa>
+                <class>Company_Shipwa_Model</class>
+                <resourceModel>shipwa_mysql4</resourceModel>
+            </shipwa>
+            <shipwa_mysql4>
+                <class>Company_Shipwa_Model_Mysql4</class>
+                <entities>
+                    <shipwa>
+                        <table>shipwa</table>
+                    </shipwa>
+                </entities>
+            </shipwa_mysql4>
+        </models>
+        <resources>
+            <shipwa_setup>
+                <setup>
+                    <module>Company_Shipwa</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </shipwa_setup>
+            <shipwa_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </shipwa_write>
+            <shipwa_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </shipwa_read>
+        </resources>
+        <blocks>
+            <shipwa>
+                <class>Company_Shipwa_Block</class>
+            </shipwa>
+        </blocks>
+        <helpers>
+            <shipwa>
+                <class>Company_Shipwa_Helper</class>
+            </shipwa>
+        </helpers>
+		
+		 <models>
+        <sales>
+            <rewrite>
+                <order_shipment>Company_Shipwa_Model_Order_Shipment</order_shipment>                   
+            </rewrite>
+        </sales>
+    </models>
+	
+	
+    <models>
+        <sales>
+            <rewrite>
+                <order_shipment_api>Company_Shipwa_Model_Order_Shipment_Api</order_shipment_api>                   
+            </rewrite>
+        </sales>
+    </models>
+	
+	
+    </global>
+</config>

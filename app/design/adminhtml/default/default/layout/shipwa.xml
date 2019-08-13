@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--<layout version="0.1.0">
+    <shipwa_adminhtml_shipwa_index>
+        <reference name="content">
+            <block type="shipwa/adminhtml_shipwa" name="shipwa" />
+        </reference>
+    </shipwa_adminhtml_shipwa_index>
+	
+
+</layout>  -->
+
+<layout version="0.1.0">
+<adminhtml_sales_order_shipment_addtrack>
+        <reference name="content">
+            <block type="adminhtml/sales_order_shipment_view_tracking" name="shipment_tracking" >   
+<action method="setTemplate">
+                   <template>shipwa/tracking.phtml</template>
+                </action>
+
+			</block>
+        </reference>
+		
+    </adminhtml_sales_order_shipment_addtrack>	
+	
+	
+	
+	
+    <shipwa_adminhtml_shipwa_index>
+        <reference name="content">
+            <block type="shipwa/adminhtml_shipwa" name="shipwa" template="shipwa/shipwa.phtml" />
+        </reference>
+    </shipwa_adminhtml_shipwa_index>
+	
+	<shipwa_adminhtml_shipwa_couriermapping>
+		<reference name="content">
+		<block type="shipwa/adminhtml_couriermapping" name="couriermapp" template="shipwa/couriermapping.phtml"></block>
+		
+		</reference>
+	
+	</shipwa_adminhtml_shipwa_couriermapping>
+
+	</layout>

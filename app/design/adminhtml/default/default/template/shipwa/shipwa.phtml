@@ -1,0 +1,76 @@
+<?php 
+$read = Mage::getSingleton('core/resource')->getConnection('core_read');
+				$write = Mage::getSingleton('core/resource')->getConnection('core_write');
+
+$logindetail= $read->fetchAll("select * from shipway  where shipway_id=1");
+if(count($logindetail)){
+
+$shipway_loginid= $logindetail[0]['loginid'];
+$shipway_licencekey= $logindetail[0]['licencekey'];
+}
+else{
+$shipway_loginid= '';
+$shipway_licencekey= '';
+}
+?>
+<form action="<?php echo $this->getFormAction().'key/'.$this->getFormKey(); ?>" onSubmit="return checkvalue();" method="POST">
+
+<div class="content-header">
+    <table cellspacing="0">
+        <tbody><tr>
+            <td style="width:50%;"><h3 class="icon-head head-sales-order">Shipway Setting</h3></td>
+            <td class="form-buttons"></td>
+       
+        </tr>
+    </tbody></table>
+</div>
+
+<div class="grid">
+
+<h2>Shipway Setting</h2> <br>
+<input type="hidden" name="form_key" value="<?php echo $this->getFormKey(); ?>" />
+
+<div class="tab-pane active" id="tab-general">
+				<style>
+					.register_block{font-size: 15px;margin: 10px 0px 27px 0px;}
+					.register_block a.btn{background-color: #1e91cf;color: #fff;padding: 5px 15px;font-size: 15px;border-radius: 3px;}
+				</style>
+				<p  class="register_block"> 
+						<a href="http://shipway.in/admin/index.php/auth/register" target="_blank" class="btn">Register</a> here for free courier tracking.
+				</p>
+					<div class="form-group required">
+						<label class="col-sm-2 control-label" for="input-name">Login ID</label>
+						<div class="col-sm-10">
+						  <input type="text" name="loginid" value="<?php echo $shipway_loginid; ?>" placeholder="Login ID" id="loginid" class="form-control" style="width:200px;">
+						 
+						</div>
+					 </div>
+					 <div class="form-group required">
+						<label class="col-sm-2 control-label" for="input-name">Licence Key</label>
+						<div class="col-sm-10">
+						  <input type="text" name="licencekey" value="<?php echo $shipway_licencekey; ?>" placeholder="Licence Key" id="licencekey" class="form-control" style="width:200px;">
+						  <?php if ($error_licencekey) { ?>
+							<div class="text-danger"><?php echo $error_licencekey; ?></div>
+						  <?php } ?>
+						</div>
+					 </div>
+				</div></br>
+				<button class="scalable" onclick="<?php echo $this->getFormAction(); ?>">Assign</button>
+</div>
+</form>
+<script>
+
+function checkvalue(){
+//var login=$( "#loginid").val();
+var login=document.getElementById("loginid").value;
+var licencekey=document.getElementById("licencekey").value;
+
+if(login=='' || licencekey=='' ){
+alert("Please fill the mandatory Filled");
+return false;
+}
+
+}
+
+</script>
+

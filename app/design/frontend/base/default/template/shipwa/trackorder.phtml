@@ -1,0 +1,68 @@
+<?php
+ $url = $this->getFormAction();
+
+?>
+<style>
+.col3-layout .col-wrapper .col-main{
+float:left!important;
+}
+</style>
+<script type="text/javascript">
+
+// Please add jquery library if it is not included in your Magento.
+
+jQuery.noConflict();
+  jQuery(document).ready(function(){
+jQuery('#submit_cod').click(function(){
+    jQuery(".pin-loading").show();
+    var postcode = jQuery('#order_id').val();
+	if(postcode != ''){
+ jQuery.ajax({
+  url: "<?php echo $url; ?>",
+  type: "POST",
+  data: {order_id : postcode,submit_cod:'submit_cod'},
+  dataType: "html",
+  success:function(data){
+      jQuery('#result').html(data);
+  }
+});
+}
+else{
+alert("Please enter a valid Order Id");
+}
+});});
+</script>
+
+<div class="breadcrumbs">
+    <ul>
+                    <li class="home">
+                            <a href="<?php echo Mage::getBaseUrl() ;?>" title="Go to Home Page">Home</a>
+                                        <span>/ </span>
+                        </li>
+                    <li class="cms_page">
+                            <strong>Track order</strong>
+                                    </li>
+            </ul>
+</div>
+<div id="shipway_track_wrapper">
+	<form  id="form" method="post" style="margin:0 auto;" >
+		<!-- <fieldset>
+		<div class="std">    <h1>Track Your Shipment Status</h1></div><br>
+		<p><b>Order ID: </b><input type="text" name="order_id" id="order_id" value="">
+		<input type="button" id="submit_cod" class="button" value="Track" name="btnSubmit"></p>
+		</fieldset> -->
+		<fieldset style="
+">
+		<div class="std">    <h1>Track Your Shipment Status</h1></div><br>
+		<p><b>Order ID: </b><input type="text" name="order_id" id="order_id" value="" style="
+    padding: 4px;
+">
+		<input type="button" id="submit_cod" class="button" value="Track" name="btnSubmit" style="
+    line-height: 26px;      
+    padding: 0 20px;      color: #fff;      background: #6bc59a;  };
+"></p>
+		</fieldset>
+	</form>
+</div>
+</br>
+<span id="result"></span>

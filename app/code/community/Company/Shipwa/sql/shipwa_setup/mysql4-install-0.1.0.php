@@ -1,0 +1,35 @@
+<?php
+
+$installer = $this;
+
+$installer->startSetup();
+
+$installer->run("
+CREATE TABLE IF NOT EXISTS  `shipwa` (
+ `shipway_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `loginid` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`shipway_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS  `shipway` (
+ `shipway_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `loginid` varchar(255) NOT NULL DEFAULT '',
+  `licencekey` varchar(255) NOT NULL DEFAULT '',
+  `created_time` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`shipway_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `shipway_couriermapping` (
+  `id` int(255) NOT NULL,
+  `default_courier` varchar(255) NOT NULL,
+  `shipway_courierid` int(255) NOT NULL,
+   `courier_type` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `shipway` (`shipway_id`, `loginid`, `licencekey`, `created_time`) VALUES
+(1, '', '', '')
+    ");
+
+$installer->endSetup(); 

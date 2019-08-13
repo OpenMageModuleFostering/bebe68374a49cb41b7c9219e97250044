@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Company_Shipwa>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Company_Shipwa>
+    </modules>
+</config> 
