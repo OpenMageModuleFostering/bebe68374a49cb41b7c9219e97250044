@@ -1,19 +1,5 @@
 {
-    "name": "OpenMageModuleFostering/bebe68374a49cb41b7c9219e97250044",
-    "type": "magento-module",
-    "license": "bebe68374a49cb41b7c9219e97250044",
-    "homepage": "",
-    "description": "Customer can check delivery status of his order.
-* Track airwaybill number from multiple courier companies at one place.
-* Track complete shipping status from confirm order to order delivery
-* Shows shipment realtime status details.",
-    "authors": [
-    {
-        "name": "Onjection",
-        "email": "contact@onjection.com"
-    }
-],
-    "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    "keywords": [
+        "openmage-module"
+    ]
 }
